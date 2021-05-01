@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div align='center'>
+<h1>To Do List</h1>
+<form action="/" method="POST">
+    {% csrf_token %}
+    {{ form.title }}
+
+<input type="submit"  value="submit" name="create_task"><br><br><br>
+</form>
+
+<hr>
+
+<table style="width:600px; border: 1px solid black" class="table table-bordered">
+    <thead>
+
+        <th>Work Name</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </thead>
+{% for i in task %}
+
+    <tr>
+        <td>{{ i.title }}&nbsp&nbsp&nbsp</td>
+        <td><a href="update/{{i.id}}">UPDATE</a><br>&nbsp &nbsp&nbsp</td>
+        <td><a href="delete/{{i.id}}">DELETE</a><br></td>
+    </tr>
+    {% endfor %}
+</table >
+
+
+</div>
+</body>
+</html>

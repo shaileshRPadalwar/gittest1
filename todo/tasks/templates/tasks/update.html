@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>update</title>
+</head>
+<body>
+<form method="POST">
+    {% csrf_token %}
+    <label>Work name :</label>
+    <input type="text" value="{{form.title}}" name='title'>
+    <input type="submit" value="update">
+</form>
+</body>
+</html>

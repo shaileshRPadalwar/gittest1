@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete</title>
+</head>
+<body>
+<h1>Do You Want To Delete {{ item }} ?</h1>
+<form method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Confirm Delete">
+    
+</form>
+</body>
+</html>
